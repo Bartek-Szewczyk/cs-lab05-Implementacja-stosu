@@ -79,6 +79,17 @@ namespace UnitTestProjectStos
 
             char c = stos.Peek;
         }
+
+        // s.create.Push(e) ==> s.IsEmpty==false
+        [TestMethod]
+        public void Isty_PoUtworzeniuIDodaniuElementuStosNieJestPusty()
+        {
+            stos = new StosWTablicy<char>();
+            stos.Push(RandomElement);
+            Assert.IsFalse(stos.IsEmpty);
+        }
+
+
     }
 
 }

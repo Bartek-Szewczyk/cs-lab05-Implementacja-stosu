@@ -29,13 +29,22 @@
         //zwraca liczbę elementów na stosie
         int Count { get; }
 
+        //przycina stos, zostawiająć 10% wolnego miejsca
+        void TrimExcess();
+
         //zwraca true, jeśli stos jest pusty, a false w przeciwnym przypadku
         bool IsEmpty { get; }
 
         //opróżnia stos
         void Clear();
 
+        //indekser - przeciążenie operatora []
+        T this[int index] { get; } //read-only
+
         //kopiuje i eksportuje stos do tablicy
         T[] ToArray();
+
+
+
     }
 }
