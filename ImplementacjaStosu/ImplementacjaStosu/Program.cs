@@ -26,6 +26,8 @@ namespace Stos
             foreach (var x in s.ToArray())
                 Console.WriteLine(x);
             Console.WriteLine(s.Count);
+
+
         }
     }
 }

@@ -80,14 +80,22 @@ namespace UnitTestProjectStos
             char c = stos.Peek;
         }
 
-        // s.create.Push(e) ==> s.IsEmpty==false
+        // s.TrimExcess
         [TestMethod]
-        public void Isty_PoUtworzeniuIDodaniuElementuStosNieJestPusty()
+        public void TrimExcess_Usunięcie10p_Komórek()
         {
             stos = new StosWTablicy<char>();
-            stos.Push(RandomElement);
-            Assert.IsFalse(stos.IsEmpty);
+            for (int i = 0; i < 100; i++)
+            {
+                stos.Push(RandomElement);
+            }
+            stos.TrimExcess();
+            int ss= stos.Count;
+            Assert.AreEqual(90,ss);
+
         }
+
+        //s.
 
 
     }
