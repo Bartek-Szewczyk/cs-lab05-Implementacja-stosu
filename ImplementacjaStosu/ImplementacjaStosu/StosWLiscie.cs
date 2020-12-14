@@ -7,6 +7,19 @@ namespace ImplementacjaStosu
 {
     class StosWLiscie<T>:IStos<T>
     {
+        private class Wezel
+        {
+            private T dane;
+            private Wezel nastepnik;
+            Wezel(T e, Wezel nastepnik)
+            {
+                dane = e;
+                this.nastepnik = nastepnik;
+            }
+        }
+
+        private Wezel szczyt;
+
         public void Push(T value)
         {
             throw new NotImplementedException();
