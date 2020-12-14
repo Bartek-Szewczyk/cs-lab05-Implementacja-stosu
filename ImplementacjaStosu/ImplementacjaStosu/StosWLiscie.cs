@@ -4,9 +4,9 @@ using System.Text;
 using System.Threading;
 using Stos;
 
-namespace ImplementacjaStosu
+namespace Stos
 {
-    class StosWLiscie<T> : IStos<T>
+    public class StosWLiscie<T> : IStos<T>
     {
 
         private class Wezel
@@ -22,6 +22,7 @@ namespace ImplementacjaStosu
         }
 
         private Wezel szczyt;
+        private int _count;
 
         public void Push(T e)
         {
@@ -33,12 +34,13 @@ namespace ImplementacjaStosu
         {
             if (IsEmpty)
                 throw new StosEmptyException();
-
             szczyt = szczyt.nastepnik;
-            return szczyt.dane;
+            _count--;
+            return default;
         }
 
-        public int Count => Count+1;
+        public int Count => _count+1;
+
         public void TrimExcess()
         {
             throw new NotImplementedException();
@@ -51,8 +53,8 @@ namespace ImplementacjaStosu
 
         public T[] ToArray()
         {
-            T[] temp = new T[Count + 1];
-            for (int i = 0; i < temp.Length; i++)
+            T[] temp = new T[_count+1 ];
+            for (int i = 0; i < _count; i++)
             {
                 temp[i] = szczyt.dane;
                 szczyt = szczyt.nastepnik;

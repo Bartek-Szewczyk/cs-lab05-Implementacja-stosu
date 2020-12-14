@@ -6,26 +6,24 @@ namespace Stos
     {
         static void Main(string[] args)
         {
-            StosWTablicy<string> s = new StosWTablicy<string>(2);
+            StosWLiscie<string> s = new StosWLiscie<string>();
             s.Push("km");
             s.Push("aa");
             s.Push("xx");
-            s.Push("xx"); s.Push("xx"); s.Push("xx"); s.Push("xx"); s.Push("xx"); s.Push("xx"); s.Push("xx");
-            foreach (var s1 in s.TopToBottom)
-                Console.WriteLine(s1);
-            Console.WriteLine(s[2]);
-            Console.WriteLine();
-            Console.WriteLine(s.Count);
-            s.TrimExcess();
-            foreach (var x in s.ToArray())
-                Console.WriteLine(x);
-            Console.WriteLine(s.Count);
-            Console.WriteLine();
 
-            s.Push("abc");
-            foreach (var x in s.ToArray())
+            string[] tabPrzed = s.ToArray();
+            s.Push("km");
+            s.Pop();
+            string[] tabPo = s.ToArray();
+
+            foreach (var x in tabPrzed)
                 Console.WriteLine(x);
             Console.WriteLine(s.Count);
+            Console.WriteLine();
+            foreach (var x in tabPo)
+                Console.WriteLine(x);
+            Console.WriteLine(s.Count);
+
 
 
         }
