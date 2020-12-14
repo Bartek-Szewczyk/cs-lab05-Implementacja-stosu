@@ -95,7 +95,17 @@ namespace UnitTestProjectStos
 
         }
 
-        //s.
+        //indekser
+        [TestMethod]
+        public void Indekser_Stos()
+        {
+            stos = new StosWTablicy<char>();
+            stos.Push('a');
+            stos.Push('b');
+            stos.Push('c');
+
+            Assert.AreEqual('b',stos[1]);
+        }
 
 
     }

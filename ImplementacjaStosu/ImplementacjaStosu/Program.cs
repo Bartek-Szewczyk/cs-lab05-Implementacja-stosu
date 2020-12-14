@@ -13,7 +13,7 @@ namespace Stos
             s.Push("xx"); s.Push("xx"); s.Push("xx"); s.Push("xx"); s.Push("xx"); s.Push("xx"); s.Push("xx");
             foreach (var s1 in s.TopToBottom)
                 Console.WriteLine(s1);
-
+            Console.WriteLine(s[2]);
             Console.WriteLine();
             Console.WriteLine(s.Count);
             s.TrimExcess();
