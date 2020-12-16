@@ -80,12 +80,26 @@ namespace UnitTestProjectStos
             char c = stos.Peek;
         }
 
-       
+        // s.TrimExcess
+        [TestMethod]
+        public void TrimExcess_Usunięcie10p_Komórek()
+        {
+            stos = new StosWLiscie<char>();
+            for (int i = 0; i < 100; i++)
+            {
+                stos.Push(RandomElement);
+            }
+            stos.TrimExcess();
+            int ss = stos.Count;
+            Assert.AreEqual(90, ss);
+
+        }
+
         //indekser
         [TestMethod]
         public void Indekser_Stos()
         {
-            stos = new StosWTablicy<char>();
+            stos = new StosWLiscie<char>();
             stos.Push('a');
             stos.Push('b');
             stos.Push('c');
